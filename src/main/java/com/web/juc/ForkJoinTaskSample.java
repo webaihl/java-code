@@ -2,7 +2,6 @@ package com.web.juc;
 
 import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.Future;
 import java.util.concurrent.RecursiveTask;
 
@@ -35,7 +34,7 @@ class SumTask extends RecursiveTask<Long> {
         }
         // 任务太大,一分为二:
         int middle = (end + start) / 2;
-        System.out.println(String.format("split %d~%d ==> %d~%d, %d~%d", start, end, start, middle, middle, end));
+        System.out.printf("split %d~%d ==> %d~%d, %d~%d%n", start, end, start, middle, middle, end);
 
         //建立两个任务并起调用
         SumTask subtask1 = new SumTask(this.array, start, middle);
