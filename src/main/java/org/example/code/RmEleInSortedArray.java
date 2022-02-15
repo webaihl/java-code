@@ -1,5 +1,8 @@
 package org.example.code;
 
+/**
+ * 不在意顺序
+ */
 public class RmEleInSortedArray {
 
 
