@@ -1,6 +1,9 @@
 package org.example.code;
 
-public class Sum1N {
+/**
+ * 数组递归求和
+ */
+public class SumArray {
 
     public static void main(String[] args) {
 
