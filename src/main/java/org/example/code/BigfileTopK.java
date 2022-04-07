@@ -20,7 +20,7 @@ public class BigfileTopK {
 //        init();
         long start = System.currentTimeMillis();
 //        computeTopK();
-        // todo 1、文件拆分 2、map 3、reduce
+        // todo 1、文件拆分line count 2、new_stream=stream.skip().limit()  3、reduce
         computeTopK2();
         System.out.println("用时：" + String.format("%.2f",(System.currentTimeMillis() - start)/1000.0));
 

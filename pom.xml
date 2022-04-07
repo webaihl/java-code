@@ -58,6 +58,14 @@
       <artifactId>guava</artifactId>
       <version>27.0-jre</version>
     </dependency>
+    <!-- algs4   -->
+    <dependency>
+      <groupId>edu.princeton.cs</groupId>
+      <artifactId>algs4</artifactId>
+      <version>1.0.4</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/src/main/resources/lib/algs4.jar</systemPath>
+    </dependency>
   </dependencies>
 
   <build>
