@@ -8,7 +8,7 @@ import java.util.concurrent.Phaser;
  * 41 分
  * 既正确且硬币的个数又最少
  */
-public class CoinChangeProblem {
+public class PhaserDemo {
 
     public static final int ONEFEN  =  1;
     public static final int FIVEFEN  =  5;
