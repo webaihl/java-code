@@ -36,11 +36,5 @@ public class MergeSortedArray {
         }
     }
 
-    public static void swap(int[] nums1, int i, int[] nums2, int j) {
-        int temp = nums1[i];
-        nums1[i] = nums2[j];
-        nums2[j] = temp;
-    }
-
 
 }
