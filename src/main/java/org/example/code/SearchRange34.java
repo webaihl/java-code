@@ -1,7 +1,5 @@
 package org.example.code;
 
-import org.example.functional.predicate.Predicate;
-
 import java.util.Arrays;
 
 /**
@@ -25,21 +23,8 @@ public class SearchRange34 {
 
         while (l + 1 != r) {
             int m = (l + r) / 2;
-            if (isBlue(() -> nums[m] <= target)) {
+            if ( nums[m] < target) {
                 l = m;
-            } else {
-                r = m+1;
-            }
-        }
-
-        res[1] = l;
-
-        l = -1;
-        r = nums.length;
-        while (l + 1 != r) {
-            int m = (l + r) / 2;
-            if (isBlue(() -> nums[m] < target)) {
-                l = m + 1;
             } else {
                 r = m;
             }
@@ -47,11 +32,23 @@ public class SearchRange34 {
 
         res[0] = r;
 
+        l = -1;
+        r = nums.length;
+        while (l + 1 != r) {
+            int m = (l + r) / 2;
+            if (nums[m] <= target) {
+                l = m;
+            } else {
+                r = m;
+            }
+        }
+
+        res[1] = l;
+        if (res[1] < res[0]){
+            res[0] = res[1] = -1;
+        }
         return res;
     }
 
-    public static boolean isBlue(Predicate p) {
-        return p.test();
-    }
 
 }
