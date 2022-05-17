@@ -21,6 +21,7 @@ public class SearchRange34 {
         int r = nums.length;
         int[] res = new int[]{-1,-1};
 
+        // 区分红蓝区域
         while (l + 1 != r) {
             int m = (l + r) / 2;
             if ( nums[m] < target) {

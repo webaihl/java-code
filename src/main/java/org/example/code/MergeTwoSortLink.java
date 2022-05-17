@@ -16,7 +16,7 @@ public class MergeTwoSortLink {
         l2.next = l22;
         l22.next = l23;
 
-        ListNode res = mergeTwoLists(l1, l2);
+        ListNode res = mergeTwoLists2(l1, l2);
         while (res != null) {
             System.out.println(res.val);
             res = res.next;
@@ -36,4 +36,25 @@ public class MergeTwoSortLink {
              return l2;
         }
     }
+
+    public static ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+        ListNode sentry = new ListNode(null);
+        ListNode cur = sentry;
+        while (l1 != null && l2 != null){
+            if (l1.val < l2.val){
+                cur.next = l1;
+                l1 = l1.next;
+            }else {
+                cur.next = l2;
+                l2 = l2.next;
+            }
+
+            cur = cur.next;
+        }
+
+        cur.next = l1 == null? l2:l1;
+        return sentry.next;
+    }
+
+
 }
