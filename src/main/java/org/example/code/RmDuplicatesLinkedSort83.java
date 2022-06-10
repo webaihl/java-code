@@ -24,6 +24,7 @@ public class RmDuplicatesLinkedSort83 {
             }
             q = q.next;
         }
+        // p此时指向不重复字段的第一个，直接舍弃第二个之后的重复节点，1,2,5,5,5
         p.next = null;
         return head;
     }
