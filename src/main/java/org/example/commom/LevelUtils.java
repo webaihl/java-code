@@ -71,6 +71,8 @@ public class LevelUtils {
         records.add(new Menu(3, 0, "第三章", null));
         records.add(new Menu(21, 2, "第二章-第一节", null));
         records.add(new Menu(211, 21, "第二章-第一节-第一段", null));
+        records.add(new Menu(2111, 211, "第二章-第一节-第一段-第一句话", null));
+        records.add(new Menu(21111, 2111, "第二章-第一节-第一段-第一句话-第一个字", null));
 
         List<Menu> result = LevelUtils.convert(records, Menu::getId, Menu::getPid, Menu::getChildren, Menu::setChildren);
         System.out.println(result);
