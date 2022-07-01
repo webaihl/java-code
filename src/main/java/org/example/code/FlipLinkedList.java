@@ -3,16 +3,12 @@ package org.example.code;
 import org.example.code.helper.ListNode;
 import org.example.code.helper.Utils;
 
+import static org.example.code.helper.Utils.list2Linked;
+
 public class FlipLinkedList {
 
     public static void main(String[] args) {
-        ListNode l1 = new ListNode(1);
-        ListNode l12 = new ListNode(2);
-        ListNode l13 = new ListNode(3);
-        ListNode l14 = new ListNode(4);
-        l1.next = l12;
-        l12.next = l13;
-        l13.next = l14;
+        ListNode l1 = list2Linked(new Integer[]{1, 2, 3, 4});
 
         Utils.printLinked(l1);
         System.out.println();
