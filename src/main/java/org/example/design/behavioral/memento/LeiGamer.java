@@ -4,10 +4,7 @@ package org.example.design.behavioral.memento;
 import lombok.Data;
 import org.apache.commons.beanutils.BeanUtils;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 /**
  * 游戏者： 游戏发起人

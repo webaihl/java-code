@@ -6,7 +6,7 @@ import java.util.Map;
 public class GuiguMybatis {
 
     //缓存user.序列化和反序列化-深克隆
-    private Map<String,User> userCache = new HashMap<>();
+    private final Map<String,User> userCache = new HashMap<>();
 
     /**
      * 从数据库查数据

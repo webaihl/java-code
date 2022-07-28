@@ -1,7 +1,5 @@
 package org.example.design.behavioral.mediator;
 
-import java.util.List;
-
 /**
  * 海南8778
  */

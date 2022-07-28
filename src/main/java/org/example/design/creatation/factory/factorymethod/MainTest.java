@@ -1,5 +1,8 @@
 package org.example.design.creatation.factory.factorymethod;
 
+/**
+ * 一个工厂生产只生产指定的对象
+ */
 public class MainTest {
 
     public static void main(String[] args) {

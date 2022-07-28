@@ -1,6 +1,6 @@
 package org.example.design.structural.adapter.clazz;
 
-import com.atguigu.design.structural.adapter.MoviePlayer;
+import org.example.design.structural.adapter.MoviePlayer;
 
 public class MainTest {
 

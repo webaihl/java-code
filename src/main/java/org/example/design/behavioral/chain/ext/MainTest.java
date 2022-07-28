@@ -8,9 +8,9 @@ public class MainTest {
         FilterChain chain = new FilterChain();
 
         //web.xml =- filter
-        HttpFilter filter = new HttpFilter();
-        CharacterFilter characterFilter = new CharacterFilter();
-        EncodingFilter encodingFilter = new EncodingFilter();
+        Filter filter = new HttpFilter();
+        Filter characterFilter = new CharacterFilter();
+        Filter encodingFilter = new EncodingFilter();
         chain.addFilter(filter);
         chain.addFilter(characterFilter);
         chain.addFilter(encodingFilter);

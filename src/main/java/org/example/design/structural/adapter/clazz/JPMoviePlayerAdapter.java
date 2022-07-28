@@ -1,8 +1,7 @@
 package org.example.design.structural.adapter.clazz;
 
-import com.atguigu.design.structural.adapter.Player;
-import com.atguigu.design.structural.adapter.Zh_JPTranslator;
-
+import org.example.design.structural.adapter.Player;
+import org.example.design.structural.adapter.Zh_JPTranslator;
 
 /**
  * 继承的方式：类结构模型，适配转换到了翻译器的功能上

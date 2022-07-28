@@ -2,7 +2,6 @@ package org.example.design.creatation.singleton;
 
 
 import java.util.Map;
-import java.util.Properties;
 
 public class MainTest {
 

@@ -20,6 +20,7 @@ public class LostNumInArr {
         return sum;
     }
 
+    // todo ?
     public static int find2(int[] nums){
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {

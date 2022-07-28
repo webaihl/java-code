@@ -1,9 +1,9 @@
 package org.example.design.structural.adapter.obj;
 
-import com.atguigu.design.structural.adapter.Player;
-import com.atguigu.design.structural.adapter.Translator;
-import com.atguigu.design.structural.adapter.Zh_JPTranslator;
 
+import org.example.design.structural.adapter.Player;
+import org.example.design.structural.adapter.Translator;
+import org.example.design.structural.adapter.Zh_JPTranslator;
 
 /**
  * 组合的方式：对象结构模型，适配转换到了翻译器的功能上

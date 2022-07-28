@@ -29,7 +29,7 @@ public class CustomGroupBy {
 
 //        collect.entrySet().removeIf(e->e.getValue().size() == 0);
         System.out.println(collect);
-        TreeMap<Integer, List<AppInfo>> treeMap = new TreeMap<>(collect);
+        Map<Integer, List<AppInfo>> treeMap = new TreeMap<>(collect);
 
         List<SearchResult> results = new ArrayList<>(treeMap.size());
 

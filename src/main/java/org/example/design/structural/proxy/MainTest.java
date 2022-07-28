@@ -1,9 +1,6 @@
 package org.example.design.structural.proxy;
 
 
-import com.atguigu.design.structural.proxy.dynamic.LeiTikTok;
-import net.sf.cglib.proxy.Enhancer;
-
 /**
  * 代理模式进行tiktok；
  * 客户----联系----宋喆---代理---宝强

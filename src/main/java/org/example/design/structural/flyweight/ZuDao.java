@@ -1,6 +1,8 @@
 package org.example.design.structural.flyweight;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * 足道店：这相当于享元工厂
