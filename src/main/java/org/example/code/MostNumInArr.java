@@ -41,7 +41,7 @@ public class MostNumInArr {
             }
             maxCount--;
             if (maxCount == 0){
-                //当前值已经消耗对方1 ，只接下一个
+                //当前值已经消耗对方1 ，直接下一个
                 maxItem = nums[i+1];
             }
         }
