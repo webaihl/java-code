@@ -13,11 +13,11 @@ public class Traverse {
         Traverse traverse = new Traverse();
         Integer[] arr = new Integer[]{1,2,3,4,5,6,7};
         TreeNode treeNode = Utils.buildTree(arr);
-        System.out.println("-----------前--------------");
+        System.out.println("-----------前-1245367-------------");
         traverse.preTraverse(treeNode);
-        System.out.println("-----------中--------------");
+        System.out.println("-----------中-4251637-------------");
         traverse.middleTraverse(treeNode);
-        System.out.println("-----------后--------------");
+        System.out.println("-----------后-4526731-------------");
         traverse.postTraverse(treeNode);
     }
     public void preTraverse(TreeNode root){
@@ -32,21 +32,19 @@ public class Traverse {
     }
     public void middleTraverse(TreeNode root){
         if (root == null) {
-            System.out.println();
             return;
         }
-        preTraverse(root.left);
+        middleTraverse(root.left);
         System.out.print(root.val);
-        preTraverse(root.right);
+        middleTraverse(root.right);
     }
 
     public void postTraverse(TreeNode root){
         if (root == null) {
-            System.out.println();
             return;
         }
-        preTraverse(root.left);
-        preTraverse(root.right);
+        postTraverse(root.left);
+        postTraverse(root.right);
         System.out.print(root.val);
     }
 }
