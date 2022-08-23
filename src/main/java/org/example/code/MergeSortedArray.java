@@ -21,7 +21,7 @@ public class MergeSortedArray {
      * https://leetcode.com/problems/merge-sorted-array/
      */
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        //从后往前
+        //从后往前填充
         int k = nums1.length - 1;
         while (n>0){
             if (m > 0 && nums1[m-1] > nums2[n-1]){

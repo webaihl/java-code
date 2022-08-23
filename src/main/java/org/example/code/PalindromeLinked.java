@@ -15,6 +15,7 @@ public class PalindromeLinked {
         System.out.println(isPalindrome(Utils.list2Linked(new Integer[]{1,1,0})));
     }
 
+    // error
     public static boolean isPalindrome(ListNode head) {
         ListNode low = head;
         ListNode fast = head;
