@@ -49,4 +49,8 @@ public class BinarySearch {
         }
         return -1;
     }
+
+    public static int wdqb(int[] arr,int target){
+        return 0;
+    }
 }
