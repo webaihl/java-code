@@ -26,8 +26,11 @@ public class Wdqb {
 
 //        Utils.printLinked(new Wdqb().removeNthFromEnd(Utils.list2Linked(new Integer[]{1,2,3,4,5}),2));
         int[] ints = {1, 2, 3,0,0,0};
-        new Wdqb().merge(ints,6,new int[]{1,2,3},3);
+        new Wdqb().merge(ints,3,new int[]{1,2,3},3);
         System.out.println(Arrays.toString(ints));
+        System.out.println(new Wdqb().longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
+        System.out.println(new Wdqb().longestCommonPrefix(new String[]{"dog","racecar","car"}));
+        System.out.println(new Wdqb().longestCommonPrefix(new String[]{"a"}));
     }
 
     public void foo(int[] arr, int l, int r){
@@ -119,7 +122,33 @@ public class Wdqb {
     }
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int k = nums1.length - 1;
+        while (n > 0) {
+            if (m > 0 && nums1[m - 1] > nums2[n - 1]) {
+                nums1[k] = nums1[m - 1];
+                k--;
+                m--;
+            } else {
+                nums1[k] = nums2[n - 1];
+                k--;
+                n--;
+            }
+        }
+    }
 
+    public String longestCommonPrefix(String[] strs) {
+        StringBuilder res = new StringBuilder();
+        char cur;
+        for (int i = 0; i < strs[0].length() ; i++) {
+            cur = strs[0].charAt(i);
+            for (int j = 1; j < strs.length; j++) {
+                if (i > strs[j].length() - 1 || cur != strs[j].charAt(i)){
+                    return res.toString();
+                }
+            }
+            res.append(cur);
+        }
+        return res.toString();
     }
 
 }
