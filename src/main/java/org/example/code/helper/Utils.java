@@ -41,4 +41,17 @@ public class Utils {
         arr[i] = arr[j];
         arr[j] = temp;
     }
+
+    public static void printArr(int[] arr, int i, int j) {
+       j = Math.min(j, arr.length);
+        for (int k = i; k < j - 1; k++) {
+            System.out.print(arr[k]+ " ");
+        }
+        System.out.println();
+    }
+
+    public static void printArr(int[] arr, int i) {
+        printArr(arr,i,arr.length);
+    }
+
 }

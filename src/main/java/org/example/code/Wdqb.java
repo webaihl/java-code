@@ -25,12 +25,23 @@ public class Wdqb {
 //        System.out.println(new Wdqb().isPalindrome(54345));
 
 //        Utils.printLinked(new Wdqb().removeNthFromEnd(Utils.list2Linked(new Integer[]{1,2,3,4,5}),2));
-        int[] ints = {1, 2, 3,0,0,0};
-        new Wdqb().merge(ints,3,new int[]{1,2,3},3);
-        System.out.println(Arrays.toString(ints));
-        System.out.println(new Wdqb().longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
-        System.out.println(new Wdqb().longestCommonPrefix(new String[]{"dog","racecar","car"}));
-        System.out.println(new Wdqb().longestCommonPrefix(new String[]{"a"}));
+        int[] ints = {2,2,2,2};
+        Wdqb wdqb = new Wdqb();
+//        new Wdqb().merge(ints,3,new int[]{1,2,3},3);
+//        System.out.println(Arrays.toString(ints));
+//        System.out.println(new Wdqb().longestCommonPrefix2(new String[]{"flower", "flow", "flight"}));
+//        System.out.println(new Wdqb().longestCommonPrefix2(new String[]{"dog","racecar","car"}));
+//        System.out.println(new Wdqb().longestCommonPrefix2(new String[]{"a"}));
+        int i1 = wdqb.removeElement(ints, 2);
+        for (int i = 0; i < i1; i++) {
+            System.out.print(ints[i]);
+        }
+        System.out.println();
+        ints = new int[]{1,2,3};
+        i1 = wdqb.removeDuplicates(ints);
+        for (int i = 0; i < i1; i++) {
+            System.out.print(ints[i]);
+        }
     }
 
     public void foo(int[] arr, int l, int r){
@@ -150,5 +161,44 @@ public class Wdqb {
         }
         return res.toString();
     }
+    public String longestCommonPrefix2(String[] strs) {
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            //每个元素都对自己进行适配，知道符合为止
+            while (!strs[i].startsWith(prefix)) {
+                prefix = prefix.substring(0,prefix.length()-1);
+            }
+            if (prefix.length() == 0) {
+                return prefix;
+            }
+        }
+        return prefix;
+    }
 
+    public int removeElement(int[] nums, int val) {
+
+        int i = 0, j = nums.length;
+        while (i < j){
+            if (nums[i] == val){
+                nums[i] = nums[j - 1];
+                j--;
+            }else {
+                i++;
+            }
+        }
+        return j;
+    }
+
+    public int removeDuplicates(int[] nums) {
+
+        int i = 0, j = 1;
+        while (j < nums.length){
+            if (nums[i] != nums[j]){
+                nums[i+1] = nums[j];
+                i++;
+            }
+            j++;
+        }
+        return i+1;
+    }
 }
