@@ -19,7 +19,7 @@ public class SleepUtil {
 
     public static String product(long timeout,String s) {
         delay(timeout);
-        return s;
+        return "生产："+s;
     }
 
     public static void accept(long timeout, String s) {

@@ -14,7 +14,9 @@ import java.util.stream.Stream;
 public class Main {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ExecutorService es = Executors.newCachedThreadPool();
+
+        ExecutorService executor = Executors.newCachedThreadPool();
+
         List<String> myList = List.of("web","alice","bob");
         StopWatch stopWatch = new StopWatch("parallelStream");
         stopWatch.start("parallelStream");
@@ -23,15 +25,17 @@ public class Main {
                 .collect(Collectors.toList());
         System.out.println(collect);
         stopWatch.stop();
+
         stopWatch.start("CompletableFuture");
         Stream<CompletableFuture<String>> collectCom =
                 myList.stream()
-                        .map(e -> CompletableFuture.supplyAsync(() -> SleepUtil.apply(1, e),es));
+                        .map(e -> CompletableFuture.supplyAsync(() -> SleepUtil.apply(1, e),executor));
 //        CompletableFuture[] collectCom  = collectCom.toArray(CompletableFuture[]::new);
 //        CompletableFuture.allOf(collectCom).join();
         List<Object> res = collectCom.map(CompletableFuture::join).collect(Collectors.toList());
         System.out.println(res);
         stopWatch.stop();
+
         stopWatch.start("A&B-->C");
         System.out.println(CompletableFuture.supplyAsync(() -> SleepUtil.product(3L, "A"))
                 .thenCombine(
@@ -40,6 +44,7 @@ public class Main {
                                 (a, b) -> SleepUtil.apply(1L, a + b)
                 ).get());
         stopWatch.stop();
+
         stopWatch.start("A|B-->C");
         System.out.println(CompletableFuture.supplyAsync(() -> SleepUtil.product(1L, "A"))
                 .applyToEitherAsync(
@@ -48,18 +53,21 @@ public class Main {
                         s -> SleepUtil.apply(1L, s)
                 ).get());
         stopWatch.stop();
+
         stopWatch.start("A&B&C");
         System.out.println(CompletableFuture.supplyAsync(() -> SleepUtil.apply(1L, "A"))
                 .thenApplyAsync(s -> SleepUtil.apply(1L, s))
                 .thenApplyAsync(e -> SleepUtil.apply(1L, e)).get());
         stopWatch.stop();
+
         stopWatch.start("A|B|C(anyOf)");// todo not anyOf
         System.out.println(CompletableFuture.runAsync(() -> SleepUtil.apply(1L, "A"))
                 .thenRunAsync(() -> SleepUtil.apply(2L, "B"))
                 .thenRunAsync(() -> SleepUtil.apply(3L, "C")).get());
         stopWatch.stop();
+
         System.out.println(stopWatch.prettyPrint());
-        es.shutdown();
+        executor.shutdown();
     }
 
 
