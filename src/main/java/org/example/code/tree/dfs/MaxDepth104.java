@@ -1,4 +1,4 @@
-package org.example.code.tree;
+package org.example.code.tree.dfs;
 
 import org.example.code.helper.TreeNode;
 import org.example.code.helper.Utils;

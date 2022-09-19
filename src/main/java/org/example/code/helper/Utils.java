@@ -28,12 +28,13 @@ public class Utils {
         return buildTree(nodes, 0);
     }
 
+    //FIXME err when contain null item
     private static TreeNode buildTree(Integer[] nodes, int index) {
         return index < nodes.length?
-                new TreeNode(nodes[index],
+                nodes[index] == null? null : new TreeNode(nodes[index],
                         buildTree(nodes,2*index+1),
                         buildTree(nodes,2*index+2)
-                ):null;
+                ) : null;
     }
 
     public static void swap(int[] arr, int i, int j) {

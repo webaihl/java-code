@@ -11,7 +11,13 @@ import java.util.*;
  * @Description
  * @createTime 2022年09月18日 13:41:00
  */
-
+// ---------------
+/**
+ * 扫描线
+ * 1. interval；
+ * 2. 根据首位排序
+ * 3. 对排序好的元素扫描，根据需求统计
+ */
 public class MeetingRoom252 {
 
     public static void main(String[] args) {
