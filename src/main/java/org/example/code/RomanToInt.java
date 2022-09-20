@@ -34,8 +34,8 @@ public class RomanToInt {
     public static int romanToInt(String roman) {
         String[] strs = roman.split("");
         int res = 0;
-        for (int i = 0; i < strs.length; i++) {
-            if (i < strs.length - 1 && ROMAN_INT_MAP.containsKey(strs[i] + strs[i + 1])) {
+        for (int i = 0; i < strs.length - 1; i++) {
+            if (ROMAN_INT_MAP.containsKey(strs[i] + strs[i + 1])) {
                 res += ROMAN_INT_MAP.get(strs[i] + strs[i + 1]);
                 i++;
             } else {

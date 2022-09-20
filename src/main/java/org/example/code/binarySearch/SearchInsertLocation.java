@@ -1,4 +1,4 @@
-package org.example.code;
+package org.example.code.binarySearch;
 
 /**
  * 35
@@ -9,8 +9,8 @@ public class SearchInsertLocation {
 
     public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 5, 9};
-        int val = -1;
-        System.out.println(location(arr, val));
+        int val = 2;
+        System.out.println(location2(arr, val));
     }
 
     /**
@@ -32,5 +32,18 @@ public class SearchInsertLocation {
             }
         }
         return l;//r+1;
+    }
+
+    public static int location2(int[] nums, int target) {
+        int l = -1, r = nums.length,m;
+        while (l + 1 != r){
+            m = (l+r) / 2;
+            if (nums[m] < target){
+                l = m;
+            }else {
+                r = m;
+            }
+        }
+        return r;
     }
 }

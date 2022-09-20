@@ -1,4 +1,4 @@
-package org.example.code;
+package org.example.code.interval;
 
 import org.example.code.helper.Interval;
 
