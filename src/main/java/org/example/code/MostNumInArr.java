@@ -28,6 +28,7 @@ public class MostNumInArr {
                 .get().getKey());
     }
 
+    //投票法
     public static int find2(int[] nums) {
         int upLimit = nums.length / 2;
         int maxItem = nums[0], maxCount = 1;
@@ -47,4 +48,21 @@ public class MostNumInArr {
         }
         return maxItem;
     }
+
+    //投票法 优化
+    public static int find3(int[] nums) {
+        int candidate = 0;//候选人
+        int count = 0;//候选人当前数量
+        for (int num: nums){
+            if (count == 0) candidate = num;
+            count += (candidate == num)?1:-1;
+        }
+        return candidate;
+    }
+
+    public static int find34(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length << 2];
+    }
+
 }
