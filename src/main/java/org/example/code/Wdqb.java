@@ -32,16 +32,19 @@ public class Wdqb {
 //        System.out.println(new Wdqb().longestCommonPrefix2(new String[]{"flower", "flow", "flight"}));
 //        System.out.println(new Wdqb().longestCommonPrefix2(new String[]{"dog","racecar","car"}));
 //        System.out.println(new Wdqb().longestCommonPrefix2(new String[]{"a"}));
-        int i1 = wdqb.removeElement(ints, 2);
-        for (int i = 0; i < i1; i++) {
-            System.out.print(ints[i]);
-        }
-        System.out.println();
-        ints = new int[]{1,2,3};
-        i1 = wdqb.removeDuplicates(ints);
-        for (int i = 0; i < i1; i++) {
-            System.out.print(ints[i]);
-        }
+//        int i1 = wdqb.removeElement(ints, 2);
+//        for (int i = 0; i < i1; i++) {
+//            System.out.print(ints[i]);
+//        }
+//        System.out.println();
+//        ints = new int[]{1,2,3};
+//        i1 = wdqb.removeDuplicates(ints);
+//        for (int i = 0; i < i1; i++) {
+//            System.out.print(ints[i]);
+//        }
+//
+
+        System.out.println(wdqb.fastPower(4, 4));
     }
 
     public void foo(int[] arr, int l, int r){
@@ -200,5 +203,17 @@ public class Wdqb {
             j++;
         }
         return i+1;
+    }
+
+    public int fastPower(int a, int n){
+        int r = 1;
+        while (n != 0){
+            if ((n & 1) == 1){
+                r = r * a;
+            }
+            a = a * a;
+            n = n>>1;
+        }
+        return r;
     }
 }
