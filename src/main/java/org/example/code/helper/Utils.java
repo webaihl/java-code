@@ -1,5 +1,9 @@
 package org.example.code.helper;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
+
 public class Utils {
 
     public static void printLinked(ListNode node){
@@ -55,4 +59,12 @@ public class Utils {
         printArr(arr,i,arr.length);
     }
 
+    public static void printArr(int[] arr) {
+        printArr(arr,0,arr.length);
+    }
+
+    public static void printList(List<Integer> list) {
+        list.forEach(System.out::print);
+        System.out.println();
+    }
 }

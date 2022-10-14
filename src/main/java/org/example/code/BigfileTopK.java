@@ -27,8 +27,7 @@ public class BigfileTopK {
     }
 
     public static void computeTopK2() {
-        try {
-            Stream<String> lines = Files.lines(Paths.get("topkdata.txt"));
+        try(Stream<String> lines = Files.lines(Paths.get("topkdata.txt"));) {
             lines.forEach(line-> addToTopKQueue(Long.valueOf(line)));
             printQuery();
         } catch (IOException e) {

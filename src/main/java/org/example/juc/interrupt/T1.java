@@ -26,7 +26,7 @@ public class T1
             System.out.println("----come in");
             while(myNumber.flag)
             {
-                new Integer(5);
+                Integer.valueOf(5);
             }
             System.out.println("-----t1 process is over");
         },"t1").start();
