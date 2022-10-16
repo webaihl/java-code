@@ -1,4 +1,4 @@
-package org.example.jdk8.lambda;
+package org.example.jdk.jdk8.lambda;
 
 import java.util.Arrays;
 import java.util.Map;

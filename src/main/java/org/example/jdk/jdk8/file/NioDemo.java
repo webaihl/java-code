@@ -1,4 +1,4 @@
-package org.example.jdk8.file;
+package org.example.jdk.jdk8.file;
 
 import java.io.IOException;
 import java.nio.file.*;
