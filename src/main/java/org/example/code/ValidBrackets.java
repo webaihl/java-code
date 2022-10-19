@@ -13,30 +13,32 @@ public class ValidBrackets {
     }
 
     public static void main(String[] args) {
-//        String s1 = "()[]{}";
-//        String s2 = "()[]{}";
-//        String s3 = "(]";
-//        System.out.println(isValid(s1));
-//        System.out.println(isValid(s2));
-//        System.out.println(isValid(s3));
+        String s1 = "()[]{}";
+        String s2 = "{[]}";
+        String s3 = "){";
+        System.out.println(isValid(s1));
+        System.out.println(isValid(s2));
+        System.out.println(isValid(s3));
 
         System.out.println(getMin("))))"));
         System.out.println(getMin(")("));
     }
 
-    //todo 28 35
     public static boolean isValid(String s) {
         int n = s.length(); if (n % 2 == 1) { return false; }
-        Deque<Character> characters = new ArrayDeque<>();
+        Deque<Character> stack = new ArrayDeque<>();
         char[] chars = s.toCharArray();
         for(char c : chars){
-            if (!characters.isEmpty() && Objects.equals(characters.peekFirst(), map.get(c))){
-                characters.poll();
-                continue;
+            if(!map.containsKey(c)){
+                stack.addFirst(c);
+            }else {
+                if (stack.isEmpty() || !Objects.equals(stack.peekFirst(), map.get(c))){
+                    return false;
+                }
+                stack.pop();
             }
-            characters.add(c);
         }
-        return characters.isEmpty();
+        return stack.isEmpty();
     }
 
     /**

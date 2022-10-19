@@ -52,8 +52,7 @@ public class CFTest {
         List<CompletableFuture<Boolean>> futures = messages.stream()
                 .map(msg -> CompletableFuture.completedFuture(msg)
                         .thenApplyAsync(CFTest::delayedUpperCase)
-                        .thenApplyAsync(CFTest::print))
-                .collect(Collectors.toList());
+                        .thenApplyAsync(CFTest::print)).toList();
 
         CompletableFuture<Void> allOf = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
 
