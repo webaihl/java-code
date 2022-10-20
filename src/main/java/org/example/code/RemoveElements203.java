@@ -21,12 +21,12 @@ public class RemoveElements203 {
         if (head == null) {
             return null;
         }
-
-        ListNode res = removeElements(head.next, val);
+        System.out.println("before");
+        head.next = removeElements(head.next, val);
+        System.out.println("after");
         if (head.val == val) {
-            return res;
+            return head.next;
         } else {
-            head.next = res;
             return head;
         }
     }
@@ -52,7 +52,7 @@ public class RemoveElements203 {
     public static void main(String[] args) {
         ListNode l1 = list2Linked(new Integer[]{1, 1, 2, 3, 1, 3});
 
-        ListNode listNode = new RemoveElements203().removeElements2(l1, 1);
+        ListNode listNode = new RemoveElements203().removeElements(l1, 1);
         Utils.printLinked(listNode);
 
 //        ListNode h = new ListNode(-1, null);
