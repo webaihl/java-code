@@ -21,15 +21,15 @@ public class FlipLinkedList {
         if (head == null) {
             return null;
         }
-        ListNode p = null, cur = head, q;
+        ListNode pre = null, cur = head, post = null;
         while (cur != null) {
-            q = cur.next;
-            cur.next = p;
-            p = cur;
-            cur = q;
+            post = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = post;
         }
 
-        return p;
+        return pre;
     }
 
     public static ListNode flip2(ListNode head) {

@@ -28,7 +28,7 @@ public class QuickSort2 {
 //        int pivot = r;
         int i = l;
         int j = l;
-        while (j <= r - 1) {
+        while (j < r) {
             if (a[j] <= a[r]) {
                 swap(a, i, j);
                 i++;
