@@ -7,7 +7,8 @@ public class BinarySearch {
         int val = 5;
         //System.out.println(searchRecursive(arr, 0, arr.length-1, val));
 //        System.out.println(searchLoopFor(arr, val));
-        System.out.println(searchLoopWhile(arr, val));
+//        System.out.println(searchLoopWhile(arr, val));
+        System.out.println(wdqbBinary(arr, val));
     }
     public static int searchRecursive(int[] arr, int start, int end, int val){
 
@@ -50,7 +51,22 @@ public class BinarySearch {
         return -1;
     }
 
-    public static int wdqb(int[] arr,int target){
-        return 0;
+    public static int wdqbBinary(int[] arr,int target){
+        int l = -1;
+        int r = arr.length;
+        int m;
+        while (l != r - 1){
+            m = l + (r - l) / 2;
+            if (arr[m] > target){
+                r = m;
+            }else if (arr[m] < target){
+                l = m;
+            }else {
+                return m;
+            }
+        }
+        return -1;
     }
+
+
 }

@@ -52,7 +52,7 @@ public class ValidBrackets {
         for (char c: chars){
             if (c == '('){
                 rightNum++;
-            }else if (rightNum == 0){
+            }else if (rightNum == 0){  // is ')'
                 leftNum++;
             }else {
                 rightNum--;

@@ -68,4 +68,14 @@ class BaseDemoTest {
     void recursiveDemo() {
         baseDemo.recursiveDemo(2);
     }
+
+    @Test
+    void combinationSum3() {
+        baseDemo.combinationSum3(7,3);
+    }
+
+    @Test
+    void subsets() {
+        baseDemo.subsets(new int[]{1,2,3});
+    }
 }
