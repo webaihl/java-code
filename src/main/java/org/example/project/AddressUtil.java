@@ -70,14 +70,17 @@ public class AddressUtil {
     }
 
     public static void main(String[] args) {
-        String ip = "43.250.200.66";
-
-        ExecutorService executors = Executors.newFixedThreadPool(20);
-
-        for (int i = 0; i < 100; i++) {
-           executors.submit(()-> getCityInfo(ip));
-        }
-
-        executors.shutdown();
+        String ip = "172.67.182.98";
+        System.out.println(getCityInfo("172.67.182.98"));
+        System.out.println(getCityInfo("185.199.111.133"));
+        System.out.println(getCityInfo("58.20.117.146"));
+        System.out.println(getCityInfo("142.250.68.74"));
+//        ExecutorService executors = Executors.newFixedThreadPool(20);
+//
+//        for (int i = 0; i < 100; i++) {
+//           executors.submit(()-> getCityInfo(ip));
+//        }
+//
+//        executors.shutdown();
     }
 }

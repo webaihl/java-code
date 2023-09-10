@@ -1,3 +1,4 @@
+/*
 package org.example.jdk.jdk19;
 
 import cn.hutool.core.util.ReUtil;
@@ -11,13 +12,15 @@ import java.util.concurrent.*;
 import java.util.regex.Matcher;
 import java.util.stream.IntStream;
 
+*/
 /**
  * @author admin
  * @version 1.0.0
  * @ClassName VirtualThreadDemo.java
  * @Description 虚拟线程
  * @createTime 2022年10月09日 18:53:00
- */
+ *//*
+
 public class VirtualThreadDemo {
     public static void main(String[] args) throws InterruptedException {
 //        newCollectionCase();
@@ -60,11 +63,13 @@ public class VirtualThreadDemo {
         task.join();
     }
 
-    /**
+    */
+/**
      * 阻塞时可能会切换平台线程
      *
      * @throws InterruptedException
-     */
+     *//*
+
     public static void v2p() throws InterruptedException {
         List<Thread> threads = IntStream.rangeClosed(0, 1000).mapToObj(index ->
                 Thread.ofVirtual().unstarted(() -> {
@@ -139,3 +144,4 @@ public class VirtualThreadDemo {
 
 
 }
+*/

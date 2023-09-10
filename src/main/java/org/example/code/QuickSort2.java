@@ -17,14 +17,11 @@ public class QuickSort2 {
     }
 
     public static void sort(int[] a, int l, int r) {
-        if (r <= l) {
-            return;
-        }
+        if (r <= l) { return; }
         int p = partion(a, l, r);
         sort(a, l, p - 1);
         sort(a, p + 1, r);
     }
-
     private static int partion(int[] a, int l, int r) {
 //        int pivot = r;
         int i = l;
