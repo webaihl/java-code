@@ -39,7 +39,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.22</version>
+      <version>1.18.30</version>
     </dependency>
     <dependency>
       <groupId>org.openjdk.jol</groupId>
@@ -56,7 +56,7 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>27.0-jre</version>
+      <version>32.0.0-android</version>
     </dependency>
     <!-- algs4   -->
     <dependency>
@@ -92,7 +92,7 @@
     <dependency>
       <groupId>cn.hutool</groupId>
       <artifactId>hutool-all</artifactId>
-      <version>5.8.8</version>
+      <version>5.8.25</version>
     </dependency>
       <dependency>
           <groupId>org.junit.jupiter</groupId>
@@ -100,6 +100,12 @@
           <version>5.8.2</version>
           <scope>test</scope>
       </dependency>
+
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jsch</artifactId>
+      <version>0.1.55</version>
+    </dependency>
 
   </dependencies>
 
